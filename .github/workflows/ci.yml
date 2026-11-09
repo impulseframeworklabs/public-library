@@ -1,0 +1,19 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [master]
+permissions:
+  contents: read
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "lint passes"
+  helper:
+    name: helper
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "a helper job nobody listed"
